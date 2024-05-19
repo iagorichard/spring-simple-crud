@@ -1,4 +1,4 @@
-package com.poo.aula.model;
+package com.poo.aula.demo.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

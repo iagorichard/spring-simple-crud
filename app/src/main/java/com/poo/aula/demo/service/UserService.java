@@ -1,4 +1,4 @@
-package com.poo.aula.service;
+package com.poo.aula.demo.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.poo.aula.exception.UserNotFoundException;
-import com.poo.aula.model.User;
-import com.poo.aula.repository.UserRepository;
+import com.poo.aula.demo.exception.UserNotFoundException;
+import com.poo.aula.demo.model.User;
+import com.poo.aula.demo.repository.UserRepository;
 
 import lombok.AllArgsConstructor;
 

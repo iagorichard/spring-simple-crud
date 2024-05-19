@@ -1,4 +1,4 @@
-package com.poo.aula.exception;
+package com.poo.aula.demo.exception;
 
 public class UserNotFoundException extends Exception {
     
