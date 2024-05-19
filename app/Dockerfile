@@ -17,7 +17,7 @@ RUN apt-get update && \
 EXPOSE 8080
 
 # Copiar o .jar gerado para o contêiner
-COPY target/*.jar app.jar
+COPY --from=build /app/target/*.jar /app/app.jar
 
 # Comando para executar a aplicação Spring Boot
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "/app/app.jar"]
