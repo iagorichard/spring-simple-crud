@@ -16,7 +16,15 @@ First, it is necessary to install the following extensions:
 
 # Running application
 
-Finally, just run the docker:
+Then, just run the docker:
 
 - docker build -t mariadb .
 - docker run --name mariadb -e MYSQL_ROOT_PASSWORD=123 -e MYSQL_DATABASE=teste -e MYSQL_USER=unicap -e MYSQL_PASSWORD=123 -p 3306:3306 -d mariadb
+
+Finally, just run the file 'DemoApplication.java' located at 'app/src/main/java/com/poo/aula/demo/controller/UserController.java'
+
+# Todo
+
+- [ ] delete object by id (CRUD operation at controller)
+- [ ] update field by id (CRUD operation at controller)
+- [ ] up the Spring Boot application at Docker
