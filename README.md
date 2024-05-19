@@ -12,8 +12,3 @@ To up the application, just run the docker compose:
 - docker-compose up --build
 
 Alfer that, expose manually the port 8080 on codespaces.
-
-# Todo
-
-- [ ] delete object by id (CRUD operation at controller)
-- [ ] update field by id (CRUD operation at controller)
