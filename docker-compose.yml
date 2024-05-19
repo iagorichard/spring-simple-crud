@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  mariadb:
+    build:
+      context: ./db
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: teste
+      MYSQL_USER: unicap
+      MYSQL_PASSWORD: 123
+    ports:
+      - "3306:3306"
+    networks:
+      - backend
+
+  springboot:
+    build:
+      context: ./app
+    container_name: springboot
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/teste
+      SPRING_DATASOURCE_USERNAME: unicap
+      SPRING_DATASOURCE_PASSWORD: 123
+    depends_on:
+      - mariadb
+    networks:
+      - backend
+
+networks:
+  backend:

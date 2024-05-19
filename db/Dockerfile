@@ -15,7 +15,3 @@ EXPOSE 3306
 
 # O comando para iniciar o servidor MariaDB
 CMD ["mysqld"]
-
-# comando a ser executado para docker
-# docker build -t mariadb .
-# docker run --name mariadb -e MYSQL_ROOT_PASSWORD=123 -e MYSQL_DATABASE=teste -e MYSQL_USER=unicap -e MYSQL_PASSWORD=123 -p 3306:3306 -d mariadb
