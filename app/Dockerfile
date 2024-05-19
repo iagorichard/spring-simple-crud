@@ -16,8 +16,8 @@ RUN apt-get update && \
 # Expor a porta que a aplicação Spring Boot usa
 EXPOSE 8080
 
-# Copiar o .jar gerado para o contêiner
-COPY --from=build /app/target/*.jar /app/app.jar
+# Mover o .jar gerado para o local correto
+RUN mv target/*.jar app.jar
 
 # Comando para executar a aplicação Spring Boot
-CMD ["java", "-jar", "/app/app.jar"]
+CMD ["java", "-jar", "app.jar"]
