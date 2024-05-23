@@ -2,16 +2,13 @@ version: '3.8'
 
 services:
   mariadb:
-    build:
-      context: ./db
+    image: mariadb:latest
     container_name: mariadb
     environment:
-      MYSQL_ROOT_PASSWORD: 123
-      MYSQL_DATABASE: teste
-      MYSQL_USER: unicap
-      MYSQL_PASSWORD: 123
-    ports:
-      - "3306:3306"
+      MYSQL_ROOT_PASSWORD: "123"
+      MYSQL_DATABASE: "teste"
+      MYSQL_USER: "unicap"
+      MYSQL_PASSWORD: "123"
     networks:
       - backend
 
@@ -22,14 +19,14 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/teste
-      SPRING_DATASOURCE_USERNAME: unicap
-      SPRING_DATASOURCE_PASSWORD: 123
-      SPRING_DATASOURCE_DRIVER-CLASS-NAME: org.mariadb.jdbc.Driver
-      SPRING_JPA_DATABASE-PLATFORM: org.hibernate.dialect.MariaDBDialect
-      SPRING_JPA_HIBERNATE_DDL-AUTO: update
-      SPRING_JPA_SHOW-SQL: true
-      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MariaDBDialect
+      SPRING_DATASOURCE_URL: "jdbc:mariadb://mariadb:3306/teste"
+      SPRING_DATASOURCE_USERNAME: "unicap"
+      SPRING_DATASOURCE_PASSWORD: "123"
+      SPRING_DATASOURCE_DRIVER-CLASS-NAME: "org.mariadb.jdbc.Driver"
+      SPRING_JPA_DATABASE-PLATFORM: "org.hibernate.dialect.MariaDBDialect"
+      SPRING_JPA_HIBERNATE_DDL-AUTO: "update"
+      SPRING_JPA_SHOW-SQL: "true"
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: "org.hibernate.dialect.MariaDBDialect"
     depends_on:
       - mariadb
     networks:
