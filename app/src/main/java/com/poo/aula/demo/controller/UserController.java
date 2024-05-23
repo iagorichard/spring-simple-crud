@@ -27,12 +27,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("all")
+    @GetMapping("all/")
     public List<User> getUsers() {
         return userService.findAllUsers();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("{id}/")
     public User getUserById(@PathVariable("id") Long id) {
         try {
             return userService.findUserById(id);
@@ -41,12 +41,12 @@ public class UserController {
         }
     }
 
-    @PostMapping("add")
+    @PostMapping("add/")
     public void insertUser(@RequestBody User user){
         userService.insertUser(user);
     }
 
-    @PutMapping("update/{id}/{name}")
+    @PutMapping("update/{id}/{name}/")
     public boolean updateNameById(@PathVariable("id") Long id, @PathVariable("name") String name){
         try{
             userService.updateNameById(id, name);
@@ -56,7 +56,7 @@ public class UserController {
         }
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("delete/{id}/")
     public boolean deleteUserById(@PathVariable("id") Long id){
         try{
             userService.deleteUserById(id);
