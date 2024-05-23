@@ -27,10 +27,12 @@ public class PetService {
         return petRepository.findAll();
     }
 
-    public void insertPet(Pet pet) {
-        Optional<User> owner = userRepository.findById(pet.getOwner().getId());
+    public void insertPet(String pet_name, Long user_id) {
+        Optional<User> owner = userRepository.findById(user_id);
 
         if (owner.isPresent()){
+            Pet pet = new Pet();
+            pet.setName(pet_name);
             pet.setOwner(owner.get());
             petRepository.save(pet);
         }

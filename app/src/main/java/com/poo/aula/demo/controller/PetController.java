@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.poo.aula.demo.model.Pet;
@@ -25,14 +26,15 @@ public class PetController{
     @Autowired
     private PetService petService;
 
-    @GetMapping("all")
+    @GetMapping("all/")
     public List<Pet> getPets(){
         return petService.getAllPets();
     }
 
-    @PostMapping("add")
-    public void insertPet(@RequestBody Pet pet){
-        petService.insertPet(pet);
+    @PostMapping("add/")
+    public void insertPet(@RequestParam("name") String name, 
+                          @RequestParam("user_id") Long user_id){
+        petService.insertPet(name, user_id);
     }
 
 
